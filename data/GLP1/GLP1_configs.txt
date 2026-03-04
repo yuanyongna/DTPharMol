@@ -1,0 +1,26 @@
+Pymol -- GetBox Plugin
+
+*********AutoDock Vina Binding Pocket*********
+--center_x 68.8 --center_y 70.2 --center_z 60.5 
+--size_x 20.4 --size_y 20.3 --size_z 21.5
+*********AutoDock Grid Option*********
+npts 54 54 57 # num. grid points in xyz
+spacing 0.375 # spacing (A)
+gridcenter 68.778 70.150 60.516 # xyz-coordinates or auto
+*********LeDock Binding Pocket*********
+Binding pocket
+58.6 79.0
+60.0 80.3
+49.8 71.3
+BoxCode(box_5058) = showbox 58.6, 79.0, 60.0, 80.3, 49.8, 71.3
+
+
+PlayMolecular
+
+input "7s15":
+0.9999
+[70.8499984741211, 69.69999694824219, 58.41999816894531]
+
+upload "GLP-1_7s15_protein.pdb":
+0.9998
+[70.8499984741211, 69.69999694824219, 60.41999816894531]
