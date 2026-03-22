@@ -7,10 +7,10 @@ import psutil
 import argparse
 import setproctitle
 import pandas as pd
-from diffumol.utils import dist_util, logger
-from diffumol.text_datasets import load_data_text
-from diffumol.step_sample import create_named_schedule_sampler
-from diffumol.train_util import TrainLoop
+from dtpharmol.utils import dist_util, logger
+from dtpharmol.text_datasets import load_data_text
+from dtpharmol.step_sample import create_named_schedule_sampler
+from dtpharmol.train_util import TrainLoop
 from transformers import set_seed
 from evaluate.basic_utils import (
     load_defaults_config,
@@ -192,10 +192,10 @@ def main():
     )
 
     """
-    创建模型 DIFFUMOL
+    创建模型 dtpharmol
     """
     print("*" * 100)
-    print("创建模型 DIFFUMOL")
+    print("创建模型 dtpharmol")
     model_kwargs = args_to_dict(args, load_defaults_config(train_config_file).keys())
     model_kwargs["num_props"] = len(args.props)
     model_kwargs["ppgraph_len"] = args.ppgraph_len
@@ -209,7 +209,7 @@ def main():
     print(f"将超参数保存到文件: {args.checkpoint_path}/training_args.json")
     if ("LOCAL_RANK" not in os.environ) or (int(os.environ["LOCAL_RANK"]) == 0):
         wandb.init(
-            project=os.getenv("WANDB_PROJECT", "DIFFUMOL"),
+            project=os.getenv("WANDB_PROJECT", "dtpharmol"),
             name=args.checkpoint_path,
         )
         wandb.config.update(args.__dict__, allow_val_change=True)
