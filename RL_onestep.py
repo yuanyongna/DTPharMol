@@ -10,13 +10,13 @@ from tqdm import tqdm
 from rdkit import Chem
 from rdkit import RDLogger
 from rdkit.Chem import AllChem
-from diffumol.utils import logger
+from dtpharmol.utils import logger
 from transformers import set_seed
-from diffumol.RL_utils.docking import vina_docking
-from diffumol.RL_utils.train_forRL import train_forRL
-from diffumol.RL_utils.generation_forRL import generation_forRL
+from dtpharmol.RL_utils.docking import vina_docking
+from dtpharmol.RL_utils.train_forRL import train_forRL
+from dtpharmol.RL_utils.generation_forRL import generation_forRL
 
-# from diffumol.RL_utils.docking import run_docking_and_normalize
+# from dtpharmol.RL_utils.docking import run_docking_and_normalize
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 os.environ["WANDB_API_KEY"] = "5286dc1a63fbde135489755cc7407102d649be44"
