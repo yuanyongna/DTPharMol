@@ -19,13 +19,13 @@ from rdkit.Chem import Crippen
 import torch.distributed as dist
 from transformers import set_seed
 from dgl import function as dglfn
-import diffumol.sascorer as sascorer
+import dtpharmol.sascorer as sascorer
 from torch.nn import functional as F
-from diffumol.utils import dist_util, logger
+from dtpharmol.utils import dist_util, logger
 from rdkit.Chem.rdMolDescriptors import CalcTPSA
-from diffumol.smiles_sample import smiles_sample
-from diffumol.text_datasets import load_data_text
-from diffumol.utils.file_utils import load_phar_file
+from dtpharmol.smiles_sample import smiles_sample
+from dtpharmol.text_datasets import load_data_text
+from dtpharmol.utils.file_utils import load_phar_file
 from data.my_ppgraph import GGCNEncoderBlock, TransformerEncoder
 from evaluate.basic_utils import (
     load_defaults_config,
